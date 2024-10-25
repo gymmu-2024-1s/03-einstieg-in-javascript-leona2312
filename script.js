@@ -95,7 +95,7 @@ export function aufgabe08(args) {
     const currentElement = input[i]
     if (currentElement === "e") {
       // do nothing
-      result.push(3)
+      result.push(3) // e durch 3 ersetzen.
     } else {
       result.push(currentElement)
     }
@@ -104,3 +104,21 @@ export function aufgabe08(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
+
+export function aufgabe09(args) {
+  const input = args
+
+  let is6long = false
+  let count = 0
+
+  for (let i = 0; i < input.length; i++) {
+    count = count + 1
+  }
+
+  if (count === 6) {
+    is6long = true
+  }
+
+  return is6long
+}
+linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
