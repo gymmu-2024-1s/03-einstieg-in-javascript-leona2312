@@ -146,3 +146,21 @@ export function aufgabe09(args) {
   return is6long
 }
 linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
+
+export function aufgabe10(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
+
+export function aufgabe12(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
