@@ -88,6 +88,27 @@ export function aufgabe04(args) {
 
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
+export function aufgabe05(args) {
+  //erstes Wort um getestet zu werden, function Funktion, Parameter, dass man in die Funktion eingeben kann.
+  const input = args
+  const result = []
+  let hasUpperCaseLetter = false
+
+  for (let i = 0; i < input.length; i++) {
+    //for ist um es zu prüfen.
+    const currentElement = input[i]
+    const upperCaseVersion = currentElement.toUpperCase()
+    if (currentElement === ".") {
+      //mache nichts.
+    } else if (currentElement === upperCaseVersion) {
+      hasUpperCaseLetter = true
+    } //sonst...
+  }
+
+  return hasUpperCaseLetter
+}
+linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
+
 export function aufgabe08(args) {
   const input = args
   const result = []
@@ -114,6 +135,7 @@ export function aufgabe09(args) {
 
   for (let i = 0; i < input.length; i++) {
     //"i" ersetzt 0. dann wird die Kurzform angewendet.
+    const currentElement = input[i] // "currentElement", damit es explizit ist womit wir arbeiten und damit wir nicht so viele Klammern schreiben müssen.
     count = count + 1
   }
 
