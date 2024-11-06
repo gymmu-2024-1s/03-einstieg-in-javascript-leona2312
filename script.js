@@ -172,3 +172,19 @@ export function aufgabe12(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
+
+export function aufgabe13(args) {
+  const input = args
+  let lastIndex = -1
+
+  for (let i = 0; i < input.length; i++) {
+    // suche die Position des letzten e's
+    const currentElement = input[i]
+
+    if (currentElement === "e") {
+      lastIndex = i
+    }
+  }
+  return lastIndex
+}
+linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
