@@ -204,3 +204,21 @@ export function aufgabe14(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
+
+export function aufgabe15(args) {
+  const input = args
+  const result = []
+
+  // Read the input only up to the first space
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === " ") {
+      break
+    }
+    result.push(currentElement)
+  }
+
+  return result.join("").trim(1)
+}
+
+linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
