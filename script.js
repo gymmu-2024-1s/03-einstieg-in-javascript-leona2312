@@ -188,3 +188,19 @@ export function aufgabe13(args) {
   return lastIndex
 }
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
+
+export function aufgabe14(args) {
+  const input = args
+  let count = 0
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === "e") {
+      count++
+      if (count === 3) {
+        return i
+      }
+    }
+  }
+  return -1 // return -1 if there are less than three 'e's
+}
+
+linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
