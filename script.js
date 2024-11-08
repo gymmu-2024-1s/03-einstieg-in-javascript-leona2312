@@ -156,6 +156,28 @@ export function aufgabe10(args) {
 
 linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
 
+export function aufgabe11(args) {
+  const input = args
+
+  //Erstelle eine Variable um den ASCII-Code zu speichern.
+  let asciiCode = 0
+
+  //Speichere den ASCII-Code vom ersten Zeichen
+  asciiCode = input.charCodeAt(0) //Gibt den Unicode-Wert des Zeichens an einer bestimmten Position in einem String zurück. Was ist ein Unicode-Wert und String? --> Ein Unicode-Wert ist eine Zahl, die ein bestimmtes Zeichen eindeutig  identifiziert, unabhänhig davon, wo es sich in einem String befindet (Nicht die Reihenfolge der Zeichen in einem Srtring, sondern den Code des einzelnen Zeichens selbst.) Ein String ist eine Zeichenkette in Anführungszeichen.
+
+  //Sollte 'null' zurückgeben wenn mehr wie ein Zeichen gegeben sind.
+  if (input.length > 1) {
+    return null
+
+    //Sollte 'null' zurückgeben wenn keine Eingbe gegeben ist.
+  } else if (input.length === 0) {
+    return null //--> Der Code gibt null zurück, wenn input mehr als ein      Zeichen oder Element enthält.
+  }
+  return asciiCode
+}
+
+linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
+
 export function aufgabe12(args) {
   const input = args
   const result = []
@@ -175,7 +197,7 @@ linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
 export function aufgabe13(args) {
   const input = args
-  let lastIndex = -1
+  let lastIndex = -1 //setzt die Variable lastIndex auf -1, um anzuzeigen, dass noch kein gültiger Index gefunden wurde. lastIndex ist eine Variable, die normalerweise den Index des zuletzt gefundenen Elements speichert.
 
   for (let i = 0; i < input.length; i++) {
     // suche die Position des letzten e's
@@ -183,7 +205,7 @@ export function aufgabe13(args) {
 
     if (currentElement === "e") {
       lastIndex = i
-    }
+    } //Der Code speichert den Index i in lastIndex, wenn das aktuelle Element "e" ist.
   }
   return lastIndex
 }
@@ -198,7 +220,7 @@ export function aufgabe14(args) {
       if (count === 3) {
         return i
       }
-    }
+    } //Der Code sucht nach dem dritten "e" in einem Text und gibt den Index zurück, an dem es gefunden wird. Sobald das dritte "e" gefunden ist, stoppt der Code. Der Index ist einfach die Zahl, die die Position eines Zeichens im Text angibt, beginnend bei 0.
   }
   return -1 // return -1 if there are less than three 'e's
 }
@@ -214,11 +236,11 @@ export function aufgabe15(args) {
     const currentElement = input[i]
     if (currentElement === " ") {
       break
-    }
+    } //Der Code beendet die Schleife, wenn currentElement ein Leerzeichen ist. currentElement ist eine Variable, die das aktuelle Element in einer Schleife darstellt. Eine Schleife wiederholt einen Codeblock, solange eine Bedingung erfüllt ist.
     result.push(currentElement)
   }
 
-  return result.join("").trim(1)
+  return result.join("")
 }
 
 linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
