@@ -89,23 +89,7 @@ export function aufgabe04(args) {
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe05(args) {
-  //erstes Wort um getestet zu werden, function Funktion, Parameter, dass man in die Funktion eingeben kann.
-  const input = args
-  const result = []
-  let hasUpperCaseLetter = false
-
-  for (let i = 0; i < input.length; i++) {
-    //for ist um es zu prüfen.
-    const currentElement = input[i]
-    const upperCaseVersion = currentElement.toUpperCase()
-    if (currentElement === ".") {
-      //mache nichts.
-    } else if (currentElement === upperCaseVersion) {
-      hasUpperCaseLetter = true
-    } //sonst...
-  }
-
-  return hasUpperCaseLetter
+  return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
@@ -287,6 +271,92 @@ export function aufgabe20(args) {
   const input = args
   const result = []
 
-  return result.join("")
+  let allGood = true
+
+  //prüfe ob nach jeden "." ein Leerschlag kommt.
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === ".") {
+      //prüfe ob das nächste Zeichen ein Leerschlag ist.
+      if (input[i + 1] === " ") {
+        //do nothing
+      } else {
+        allGood = false
+      }
+    }
+  }
+  return allGood
 }
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
+
+export function aufgabe21(args) {
+  const input = args
+  const result = []
+  //kehre die Eingabe um
+  for (let i = input.length - 1; i >= 0; i--) {
+    const currentElement = input[i]
+    result.push(currentElement)
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
+
+export function aufgabe22(args) {
+  const input = args
+  const result = []
+
+  for (const currentElement of args) {
+    if (currentElement === "") {
+      result.push("_") // Ersetze jedes Zeichen durch "_"
+    } else if (currentElement === "") {
+      // do nothing
+    } else {
+      result.push(currentElement) //Behalte alle anderen Eingaben bei
+    }
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
+
+export function aufgabe23(args) {
+  const input = args
+  const result = [] //Leere Liste, in der wir das Resultat anhängen
+  const firstelement = input[0]
+
+  // Hänge firstelement an die Liste an
+  result.push(firstelement)
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    result.push(currentElement)
+  }
+
+  result.push(firstelement) //Schreibe das erste Zeichen am Ende
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
+
+export function aufgabe24(args) {
+  // Vertausche das erste und das letzte Zeichen
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (i === 0) {
+      result.push(input[input.length - 1])
+    } else if (i === input.length - 1) {
+      result.push(input[0])
+    } else {
+      result.push(currentElement)
+    }
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
