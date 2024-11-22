@@ -80,18 +80,42 @@ linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 export function aufgabe04(args) {
   const input = args
   const result = []
+  // Zähle alle Wörter des Textes und speichere die Anzahl in einer Variable
+  let count = 0
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    if (currentElement === " ") {
+      count = count + 1
+    }
   }
-  return result.join("")
-}
+  if (count === 0) {
+  }
 
+  return count + 1
+}
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe05(args) {
   return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
+
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+  let hasSonderzeichen = false
+  // Schreibe eine Funktion, die testet ob ein Sonderzeichen vorkommt
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+    if (ascii >= 33 && ascii <= 47) {
+      hasSonderzeichen = true
+    }
+  }
+  return hasSonderzeichen
+}
+linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
 export function aufgabe08(args) {
   const input = args
@@ -204,10 +228,10 @@ export function aufgabe14(args) {
       if (count === 3) {
         return i
       }
-    } //Der Code sucht nach dem dritten "e" in einem Text und gibt den Index zurück, an dem es gefunden wird. Sobald das dritte "e" gefunden ist, stoppt der Code. Der Index ist einfach die Zahl, die die Position eines Zeichens im Text angibt, beginnend bei 0.
+    } //Der Code sucht nach dem dritten "e" in einem Text und gibt den Index zurück, an dem es gefunden wird. Sobald der dritte "e" gefunden ist, stoppt der Code. Der INdex ist einfach die Zahl, die die Position eines Zeichens im Text angibt, beginnend bei 0.
   }
-  return -1 // return -1 if there are less than three 'e's
 }
+return -1 //return -1 if there are any less than three 'e's.
 
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
 
@@ -360,3 +384,41 @@ export function aufgabe24(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
+
+export function aufgabe25(args) {
+  const input = args
+  const result = []
+  //Lösche das Zeichen welches in der Mitte des Textes steht
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (i === Math.floor(input.length / 2)) {
+      // do nothing
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
+
+export function aufgabe27(args) {
+  const input = args
+  const result = []
+  //sollte testen ob die Eingabe eine Zahl ist
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement >= "0" && currentElement <= "9") {
+      result.push(currentElement)
+    }
+  }
+  //sollte testen ob die Eingabe keine Zahl ist
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement < "0" || currentElement > "9") {
+      return false
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
