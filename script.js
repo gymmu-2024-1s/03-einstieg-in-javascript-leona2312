@@ -117,6 +117,24 @@ export function aufgabe06(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
 
+export function aufgabe07(args) {
+  const input = args
+  const result = []
+  //Sollte das Wort 'und' erkennen
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "u") {
+      if (input[i + 1] === "n") {
+        if (input[i + 2] === "d") {
+          return true
+        }
+      }
+    }
+  }
+  return false
+}
+linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
+
 export function aufgabe08(args) {
   const input = args
   const result = []
@@ -159,9 +177,15 @@ export function aufgabe10(args) {
   const input = args
   const result = []
 
-  return result.join("")
+  for (let i = 0; i < input.length; i++) {
+    //Teste, ob die Eingabe ein korrekter RGB Hexcode ist.
+    if (input[i] === "#") {
+      return true
+    } else {
+      return false
+    }
+  }
 }
-
 linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
 
 export function aufgabe11(args) {
@@ -171,7 +195,7 @@ export function aufgabe11(args) {
   let asciiCode = 0
 
   //Speichere den ASCII-Code vom ersten Zeichen
-  asciiCode = input.charCodeAt(0) //Gibt den Unicode-Wert des Zeichens an einer bestimmten Position in einem String zurück. Was ist ein Unicode-Wert und String? --> Ein Unicode-Wert ist eine Zahl, die ein bestimmtes Zeichen eindeutig  identifiziert, unabhänhig davon, wo es sich in einem String befindet (Nicht die Reihenfolge der Zeichen in einem Srtring, sondern den Code des einzelnen Zeichens selbst.) Ein String ist eine Zeichenkette in Anführungszeichen.
+  asciiCode = input.charCodeAt(0) //Gibt den UniCode-Wert des Zeichens an einer bestimmten Position in einem String zurück. Was ist ein Unicode-Wert und String? --> Ein Unicode-Wert ist eine Zahl, die ein bestimmtes Zeichen eindeutig  identifiziert, unabhänhig davon, wo es sich in einem String befindet (Nicht die Reihenfolge der Zeichen in einem Srtring, sondern den Code des einzelnen Zeichens selbst.) Ein String ist eine Zeichenkette in Anführungszeichen.
 
   //Sollte 'null' zurückgeben wenn mehr wie ein Zeichen gegeben sind.
   if (input.length > 1) {
@@ -230,8 +254,8 @@ export function aufgabe14(args) {
       }
     } //Der Code sucht nach dem dritten "e" in einem Text und gibt den Index zurück, an dem es gefunden wird. Sobald der dritte "e" gefunden ist, stoppt der Code. Der INdex ist einfach die Zahl, die die Position eines Zeichens im Text angibt, beginnend bei 0.
   }
+  return -1 //return -1 if there are any less than three 'e's.
 }
-return -1 //return -1 if there are any less than three 'e's.
 
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
 
@@ -269,6 +293,24 @@ export function aufgabe16(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
+
+export function aufgabe17(args) {
+  const input = args
+  const result = []
+  // Schreibe hinter jedem Wort ein ","
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "") {
+      result.push(",")
+    } else {
+      result.push(currentElement)
+    }
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
 
 export function aufgabe19(args) {
   const input = args
@@ -401,6 +443,25 @@ export function aufgabe25(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
+
+export function aufgabe26(args) {
+  const input = args
+  const result = []
+  // Vergleiche und vertausche das erste und das zweite Zeichen
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (i === 0) {
+      result.push(input[1])
+    } else if (i === 1) {
+      result.push(input[0])
+    } else {
+      result.push(currentElement)
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe26]", aufgabe26)
 
 export function aufgabe27(args) {
   const input = args
