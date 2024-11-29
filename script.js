@@ -483,3 +483,25 @@ export function aufgabe27(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
+
+export function EigeneAufgabe(args) {
+  const input = args
+  const result = []
+
+  let allGood = true
+
+  //prüfe ob nach jeden "." ein Leerschlag kommt.
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "e") {
+      //prüfe ob als nächsts drei Leerschlag kommen.
+      if (input[i + 1] === " ") {
+        //do nothing
+      } else {
+        allGood = false
+      }
+    }
+  }
+  return allGood
+}
+linkupExerciseHandler("[data-click=EigeneAufgabe]", EigeneAufgabe)
