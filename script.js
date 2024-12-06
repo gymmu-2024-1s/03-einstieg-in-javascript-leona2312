@@ -484,6 +484,15 @@ export function aufgabe27(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 
+export function aufgabe28(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
+
 export function EigeneAufgabe(args) {
   const input = args
   const result = []
