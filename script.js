@@ -96,7 +96,7 @@ export function aufgabe04(args) {
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe05(args) {
-  return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist
+  return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist.
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
@@ -509,3 +509,11 @@ export function EigeneAufgabe(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe]", EigeneAufgabe)
+
+export function EigeneAufgabe02(args) {
+  const input = args
+  const result = []
+  // Sollte alle
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=EigeneAufgabe02]", EigeneAufgabe02)
