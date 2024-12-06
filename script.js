@@ -497,20 +497,15 @@ export function EigeneAufgabe(args) {
   const input = args
   const result = []
 
-  let allGood = true
-
-  //prüfe ob nach jeden "." ein Leerschlag kommt.
+  //Übersetze den Text in Ascii und +2
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === "e") {
-      //prüfe ob als nächsts drei Leerschlag kommen.
-      if (input[i + 1] === " ") {
-        //do nothing
-      } else {
-        allGood = false
-      }
-    }
+    const ascii = currentElement.charCodeAt(0)
+    const code = ascii + 2
+    const letter = String.fromCharCode(code)
+    result.push(letter)
   }
-  return allGood
+
+  return result.join("")
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe]", EigeneAufgabe)
