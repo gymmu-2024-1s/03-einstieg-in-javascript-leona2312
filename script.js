@@ -51,7 +51,7 @@ export function aufgabe02(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    const upperCaseLetter = currentElement.toUpperCase()
+    const upperCaseLetter = currentElement.toUpperCase() //gibt die Eingabe als Grossbuchstaben zurück
 
     // Hänge das aktuelle Zeichen doppelt an.
     result.push(upperCaseLetter)
@@ -73,7 +73,7 @@ export function aufgabe03(args) {
       count++ // Kurzform von count = count + 1, grosse "E" zählen, Schlaufe.
     }
   }
-  return count
+  return count //gibt den Wert zurück
 }
 linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 
@@ -127,7 +127,7 @@ export function aufgabe04(args) {
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe05(args) {
-  return /[A-Z]/.test(args) //üperfrüft, ob mindestens ein Großbuchstabe vorhanden ist. (return-Anweisung beendet eine Funktion und gibt einen Wert zurück)
+  return /[A-Z]/.test(args) //üperfrüft, ob mindestens ein Großbuchstabe vorhanden ist. (return-Anweisung beendet eine Funktion und gibt den Wert zurück)
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
@@ -177,10 +177,10 @@ export function aufgabe08(args) {
       //Element, um welches sich handelt, also e.
       result.push(3) // e durch 3 ersetzen.
     } else {
-      result.push(currentElement)
+      result.push(currentElement) //hängt das e an das Ende der Liste dran
     }
   }
-  return result.join("")
+  return result.join("") //macht aus der Liste einen String
 }
 
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
@@ -319,7 +319,7 @@ export function aufgabe16(args) {
     const currentElement = input[i]
     if (currentElement === "$") {
       break
-    }
+    } //stoppt wenn es '$' ist
     result.push(currentElement)
   }
   return result.join("")
@@ -334,7 +334,7 @@ export function aufgabe17(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    //Wenn manauf ein Leerzeichen trifft, dann schreibt man alles was man bisher gemacht hat in die Liste
+    //Wenn man auf ein Leerzeichen trifft, dann schreibt man alles was man bisher gemacht hat in die Liste
     // in die totallist
 
     if (currentElement === " ") {
@@ -345,15 +345,15 @@ export function aufgabe17(args) {
     }
   }
   //Alles in die Liste schreiben was man bis am ende gelesen hat.
-  totallist.push(currentlist.join(""))
-  return totallist
+  totallist.push(currentlist.join("")) //macht einen Text und fügt den dann zu der totalliste hinzu.
+  return totallist //wird als Text zurueckgegeben
 }
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
 
 export function aufgabe18(args) {
   const input = args
 
-  // Wir können die Aufgabe 17 verwenden um eine Liste zu bekommen.
+  // Man kann die Aufgabe 17 verwenden um eine Liste zu bekommen.
   const nameAndAge = aufgabe17(input)
 
   // Man generiert unsere Ausgabeliste
@@ -367,7 +367,7 @@ export function aufgabe18(args) {
   result.push(nameAndAge[0])
   result.push(" und sind 16")
   result.push(nameAndAge[1])
-  result.push(" Jahre alt.")
+  result.push(" Jahre alt.") //wird als Text zurückgegeben (alle beide)
 
   // Das Resultat immer als Text zurückgeben
   return result.join("")
@@ -389,7 +389,7 @@ export function aufgabe19(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     result.push(currentElement)
-    result.push(currentElement)
+    result.push(currentElement) //gleiches Element wird doppelt hinzugefügt
   }
   return result.join("")
 }
@@ -399,7 +399,7 @@ export function aufgabe20(args) {
   const input = args
   const result = []
 
-  let allGood = true
+  let allGood = true //die Eingabe ist richtig
 
   //prüfe ob nach jeden "." ein Leerschlag kommt.
   for (let i = 0; i < input.length; i++) {
@@ -425,7 +425,7 @@ export function aufgabe21(args) {
   for (let i = input.length - 1; i >= 0; i--) {
     const currentElement = input[i]
     result.push(currentElement)
-  }
+  } //es wird rückwärts geprüft und das Ergebnis wird in result geschrieben
 
   return result.join("")
 }
