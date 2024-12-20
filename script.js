@@ -437,12 +437,13 @@ export function aufgabe22(args) {
   const result = []
 
   for (const currentElement of args) {
+    //geht durch die Eingabe{
     if (currentElement === "") {
-      result.push("_") // Ersetze jedes Zeichen durch "_"
+      result.push("_") //Ein Leerzeichen wird durch einen _ ersetzt
     } else if (currentElement === "") {
       // do nothing
     } else {
-      result.push(currentElement) //Behalte alle anderen Eingaben bei
+      result.push(currentElement) //Behaltet alle anderen Eingaben
     }
   }
 
