@@ -535,6 +535,7 @@ export function aufgabe27(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement >= "0" && currentElement <= "9") {
+      //man prüft, ob das Zeichen eine Zahl ist
       result.push(currentElement)
     }
   }
@@ -542,7 +543,8 @@ export function aufgabe27(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement < "0" || currentElement > "9") {
-      return false
+      //man prüft, ob das Zeichen keine Zahl ist
+      return false //dann ist es falsch
     }
   }
   return result.join("")
