@@ -154,8 +154,11 @@ export function aufgabe07(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "u") {
+      //Wenn der Buchstabe genau das ist, was wir eingegeben haben, geht es weiter.
       if (input[i + 1] === "n") {
+        //man schaut, ob direkt die nächste Eingabe kommt. hier also ob n kommt.
         if (input[i + 2] === "d") {
+          //zwei Stellen nach der ersten Eingabe schaut man, ob d kommt.
           return true
         }
       }
@@ -171,8 +174,7 @@ export function aufgabe08(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
-      //Element, um welches sich handelt.
-      // do nothing
+      //Element, um welches sich handelt, also e.
       result.push(3) // e durch 3 ersetzen.
     } else {
       result.push(currentElement)
@@ -210,9 +212,10 @@ export function aufgabe10(args) {
   for (let i = 0; i < input.length; i++) {
     //Teste, ob die Eingabe ein korrekter RGB Hexcode ist.
     if (input[i] === "#") {
-      return true
+      //Testet, ob die Eingabe ein "#" ist.
+      return true //gibt richtig an
     } else {
-      return false
+      return false //gibt falsch an
     }
   }
 }
@@ -249,7 +252,7 @@ export function aufgabe12(args) {
 
     //Suche die Position des ersten e's
     if (currentElement === "e") {
-      return i // er springt aus der Funktion raus, wenn e gefunden wird bricht es ab und es wird nicht mehr ausgeführt.
+      return i //wenn e gefunden wird bricht es ab und es wird nicht mehr ausgeführt.
     }
   }
   return -1 // -1 zeigt an, dass es nicht in der Liste steht.
@@ -259,7 +262,7 @@ linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
 export function aufgabe13(args) {
   const input = args
-  let lastIndex = -1 //setzt die Variable lastIndex auf -1, um anzuzeigen, dass noch kein gültiger Index gefunden wurde. lastIndex ist eine Variable, die normalerweise den Index des zuletzt gefundenen Elements speichert.
+  let lastIndex = -1 //setzt die Variable lastIndex auf -1, um anzuzeigen, dass noch kein gültiger Index gefunden wurde. lastIndex speichert den Index von dem letztem Element.
 
   for (let i = 0; i < input.length; i++) {
     // suche die Position des letzten e's
@@ -269,7 +272,7 @@ export function aufgabe13(args) {
       lastIndex = i
     } //Der Code speichert den Index i in lastIndex, wenn das aktuelle Element "e" ist.
   }
-  return lastIndex
+  return lastIndex //gibt den Index zurück
 }
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
@@ -282,9 +285,9 @@ export function aufgabe14(args) {
       if (count === 3) {
         return i
       }
-    } //Der Code sucht nach dem dritten "e" in einem Text und gibt den Index zurück, an dem es gefunden wird. Sobald der dritte "e" gefunden ist, stoppt der Code. Der INdex ist einfach die Zahl, die die Position eines Zeichens im Text angibt, beginnend bei 0.
+    } //Der Code sucht nach dem dritten "e" in einem Text und gibt den Index zurück, an dem es gefunden wird. Sobald das dritte "e" gefunden ist, stoppt der Code. Der Index ist einfach die Zahl, die die Position eines Zeichens im Text angibt, beginnend bei 0.
   }
-  return -1 //return -1 if there are any less than three 'e's.
+  return -1 //return -1 wird angezeigt, wenn weniger als 3 "e"'s da sind.
 }
 
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
@@ -353,16 +356,16 @@ export function aufgabe18(args) {
   // Wir können die Aufgabe 17 verwenden um eine Liste zu bekommen.
   const nameAndAge = aufgabe17(input)
 
-  // Wir generieren unsere Ausgabeliste
+  // Man generiert unsere Ausgabeliste
   const result = []
 
-  // Hier schreiben wir ganze Worte in die Liste, auch das ist möglich
-  result.push("Sie heissen ")
+  // Hier schreibt man ganze Worte in die Liste, auch das ist möglich
+  result.push("Sie heissen Leona")
 
-  // Wir setzen die Liste dann so zusammen, dass der Name und das Alter an der
+  // Man setzt die Liste dann so zusammen, dass der Name und das Alter an der
   // richtigen Stelle eingefügt werden.
   result.push(nameAndAge[0])
-  result.push(" und sind ")
+  result.push(" und sind 16")
   result.push(nameAndAge[1])
   result.push(" Jahre alt.")
 
@@ -404,9 +407,10 @@ export function aufgabe20(args) {
     if (currentElement === ".") {
       //prüfe ob das nächste Zeichen ein Leerschlag ist.
       if (input[i + 1] === " ") {
+        //Die Eingabe ist ein Leerschlag und eine Stelle danach (+1) kommt ein Punkt.
         //do nothing
       } else {
-        allGood = false
+        allGood = false //sonst ist es falsch.
       }
     }
   }
@@ -588,7 +592,7 @@ export function EigeneAufgabe(args) {
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe]", EigeneAufgabe)
 
-export function EigeneAufgabe02(input) {
+export function EigeneAufgabe2(input) {
   let summe = 0
   let currentZahl = ""
 
@@ -611,7 +615,7 @@ export function EigeneAufgabe02(input) {
 
   return summe
 }
-linkupExerciseHandler("[data-click=EigeneAufgabe02]", EigeneAufgabe02)
+linkupExerciseHandler("[data-click=EigeneAufgabe2]", EigeneAufgabe2)
 
 export function Bubblesort(args) {
   const text = args
