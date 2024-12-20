@@ -559,21 +559,23 @@ export function aufgabe28(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (!isNaN(currentElement)) {
-      // Überprüfe, ob das Element eine Zahl ist
+      // isNaN() prüft, ob das Element eine Zahl ist
+      // Überprüfe, ob das Element keine Zahl ist. durch das ! prüft es, OB es eine Zahl ist
       if (!num1) {
-        num1 = parseInt(currentElement)
+        num1 = parseInt(currentElement) //num1 speichert die erste Zahl, die man findet
       } else if (!num2) {
-        num2 = parseInt(currentElement)
-        break
+        num2 = parseInt(currentElement) //speichert die zweite Zahl, die man findet
+        break //es wird abgebrochen
       }
     }
   }
 
   // Wenn zwei Zahlen gefunden wurden, addiere sie
   if (num1 !== undefined && num2 !== undefined) {
-    return num1 + num2
+    //prüft, ob num1 und num2 beides Zahlen sind oder nicht
+    return num1 + num2 //die Summe der Zahlen von num1 und num2 wird zurückgegeben
   } else {
-    return "Keine zwei Zahlen gefunden"
+    return "Keine zwei Zahlen gefunden" //wenn es keine Zahlen hat, wird "Keine zwei Zahlen gefunden" ausgegeben
   }
 }
 
