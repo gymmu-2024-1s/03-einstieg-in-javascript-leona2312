@@ -479,9 +479,9 @@ export function aufgabe24(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === 0) {
-      result.push(input[input.length - 1])
+      result.push(input[input.length - 1]) //nimmt das letzte Zeichen und hängt es an, also ganz vorne
     } else if (i === input.length - 1) {
-      result.push(input[0])
+      result.push(input[0]) //wenn man am Ende ist, nimmt man das erste Zeichen und macht es ganz hinten
     } else {
       result.push(currentElement)
     }
