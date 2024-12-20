@@ -695,7 +695,7 @@ export function Bucketsort(args) {
   return buckets
     .map((bucket) => bucket.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0))) // Sortiere jedes Bucket
     .flat() // Alle sortierten Buckets werden flach zusammengeführt
-    .join("") // Als String zusammenfügen
+    .join("") // Es wird als String zusammengefügt
 }
 
 linkupExerciseHandler("[data-click=Bucketsort]", Bucketsort)
