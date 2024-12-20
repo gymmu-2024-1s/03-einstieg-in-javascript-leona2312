@@ -588,10 +588,10 @@ export function EigeneAufgabe(args) {
   //Übersetze den Text in Ascii und +2
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    const ascii = currentElement.charCodeAt(0)
-    const code = ascii + 2
-    const letter = String.fromCharCode(code)
-    result.push(letter)
+    const ascii = currentElement.charCodeAt(0) //Der Ascii Wert des Zeichens wird gelesen und in ascii gespeichert
+    const code = ascii + 2 //Der Wert von Ascii wird mit 2 addiert oder halt +2 erhöht
+    const letter = String.fromCharCode(code) //mit diesen String wird der neue Wert für Ascii gegeben
+    result.push(letter) //das neue Zeichen wird hinzugefügt
   }
 
   return result.join("")
