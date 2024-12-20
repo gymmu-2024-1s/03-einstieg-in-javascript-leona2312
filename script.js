@@ -499,9 +499,10 @@ export function aufgabe25(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === Math.floor(input.length / 2)) {
+      //der mittlere Wert wird einfach übersprungen
       // do nothing
     } else {
-      result.push(currentElement)
+      result.push(currentElement) //die anderen Zeichen werden zu result hinzugefügt
     }
   }
   return result.join("")
