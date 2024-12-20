@@ -127,16 +127,15 @@ export function aufgabe04(args) {
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
 export function aufgabe05(args) {
-  return /[A-Z]/.test(args) //üperfrüfe ob mindestens ein Großbuchstabe vorhanden ist.
+  return /[A-Z]/.test(args) //üperfrüft, ob mindestens ein Großbuchstabe vorhanden ist. (return-Anweisung beendet eine Funktion und gibt einen Wert zurück)
 }
 linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
 
 export function aufgabe06(args) {
   const input = args
   const result = []
-  let hasSonderzeichen = false
+  let hasSonderzeichen = false //kommt ein Sonderzeichen vor?
   // Schreibe eine Funktion, die testet ob ein Sonderzeichen vorkommt
-
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
@@ -546,9 +545,28 @@ linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 
 export function aufgabe28(args) {
   const input = args
-  const result = []
+  let num1, num2
 
-  return result.join("")
+  // Suche nach den ersten beiden Zahlen im Array
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (!isNaN(currentElement)) {
+      // Überprüfe, ob das Element eine Zahl ist
+      if (!num1) {
+        num1 = parseInt(currentElement)
+      } else if (!num2) {
+        num2 = parseInt(currentElement)
+        break
+      }
+    }
+  }
+
+  // Wenn zwei Zahlen gefunden wurden, addiere sie
+  if (num1 !== undefined && num2 !== undefined) {
+    return num1 + num2
+  } else {
+    return "Keine zwei Zahlen gefunden"
+  }
 }
 
 linkupExerciseHandler("[data-click=aufgabe28]", aufgabe28)
@@ -570,11 +588,28 @@ export function EigeneAufgabe(args) {
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe]", EigeneAufgabe)
 
-export function EigeneAufgabe02(args) {
-  const input = args
-  const result = []
-  // Sollte alle
-  return result.join("")
+export function EigeneAufgabe02(input) {
+  let summe = 0
+  let currentZahl = ""
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (
+      currentElement.charCodeAt(0) >= 48 &&
+      currentElement.charCodeAt(0) <= 57
+    ) {
+      currentZahl += currentElement
+    } else if (currentZahl !== "") {
+      summe += parseInt(currentZahl)
+      currentZahl = ""
+    }
+  }
+
+  if (currentZahl !== "") {
+    summe += parseInt(currentZahl)
+  }
+
+  return summe
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe02]", EigeneAufgabe02)
 
@@ -626,3 +661,25 @@ export function Selectionsort(args) {
 }
 
 linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
+
+export function Bucketsort(args) {
+  const text = args
+  const list = text.split("") // Wandelt den Text in eine Liste um
+
+  // 256 Buckets für alle ASCII-Zeichen (von 0 bis 255)
+  let buckets = new Array(256).fill().map(() => [])
+
+  // Elemente in die Buckets verteilen
+  for (let i = 0; i < list.length; i++) {
+    let index = list[i].charCodeAt(0) // Die ASCII-Werte der Zeichen
+    buckets[index].push(list[i])
+  }
+
+  // Eimer sortieren und zusammenführen
+  return buckets
+    .map((bucket) => bucket.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0))) // Sortiere jedes Bucket
+    .flat() // Alle sortierten Buckets werden flach zusammengeführt
+    .join("") // Als String zusammenfügen
+}
+
+linkupExerciseHandler("[data-click=Bucketsort]", Bucketsort)
