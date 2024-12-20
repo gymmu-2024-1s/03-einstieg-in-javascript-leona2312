@@ -648,30 +648,32 @@ export function Bubblesort(args) {
 linkupExerciseHandler("[data-click=Bubblesort]", Bubblesort)
 
 export function Selectionsort(args) {
-  const input = args.split("")
+  const input = args.split("") //wird in Zeichen zerlegt
   const result = []
-  let n = input.length
+  let n = input.length //die Länge wird gespeichert
   for (let i = 0; i < n - 1; i++) {
     // Assume the current position holds
     // the minimum element
-    let min_idx = i
+    let min_idx = i //der INdex des kleinsten Elements wird zu Index i gesetzt
 
     // Iterate through the unsorted portion
     // to find the actual minimum
     for (let j = i + 1; j < n; j++) {
+      //alle Zeichen ausser dem letzten
       if (input[j] < input[min_idx]) {
+        //wenn das Zeichen kleiner ist als das kleinste Element
         // Update min_idx if a smaller element is found
-        min_idx = j
+        min_idx = j //der Index des kleinsten Elements wird zu Index j gesetzt
       }
     }
 
     // Move minimum element to its
     // correct position
-    let temp = input[i]
-    input[i] = input[min_idx]
-    input[min_idx] = temp
+    let temp = input[i] //speichert das aktuelle Element beim Index i
+    input[i] = input[min_idx] //das Element im Index i wird durch das Element im Index min_idx ersetzt. als durch das kleinere Element
+    input[min_idx] = temp //das fespeicherte Element wird an die neue gefundene Position gesetzt
   }
-  return input
+  return input //gibt die sortierte Version zurück
 }
 
 linkupExerciseHandler("[data-click=Selectionsort]", Selectionsort)
