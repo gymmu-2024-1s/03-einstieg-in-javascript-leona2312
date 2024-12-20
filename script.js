@@ -599,8 +599,8 @@ export function EigeneAufgabe(args) {
 linkupExerciseHandler("[data-click=EigeneAufgabe]", EigeneAufgabe)
 
 export function EigeneAufgabe2(input) {
-  let summe = 0
-  let currentZahl = ""
+  let summe = 0 //speichert die Summe der Zahlen
+  let currentZahl = "" //speichert die aktuelle Zahl
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
@@ -608,18 +608,22 @@ export function EigeneAufgabe2(input) {
       currentElement.charCodeAt(0) >= 48 &&
       currentElement.charCodeAt(0) <= 57
     ) {
-      currentZahl += currentElement
+      //schaut, ob das Zeichen eine Zahl ist{
+      currentZahl += currentElement //falls es eine Ziffer ist, dann wird es zu currentZahl hinzugefügt, damit die Zahlen zusammengefasst werden
     } else if (currentZahl !== "") {
-      summe += parseInt(currentZahl)
-      currentZahl = ""
+      //wenn ein Zeichen keine Zahl ist und currentZahl nicht leer ist, dann wird die Zahl die bis jetzt gefunden wurdezu summe hinzugefügt
+
+      summe += parseInt(currentZahl) //die Zahl wird zusammengeasst (zusammengenommen) und in summe gespeichert
+      currentZahl = "" //Alles wird wieder leer gemacht, damit eine neue Zahl gespeichert werden kann
     }
   }
 
   if (currentZahl !== "") {
-    summe += parseInt(currentZahl)
+    //wenn eine Zahl übrig geblieben ist, wird sie auch zur Summe hinzugefügt
+    summe += parseInt(currentZahl) //wird addiert
   }
 
-  return summe
+  return summe //die Summe wird zurückgegeben
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe2]", EigeneAufgabe2)
 
