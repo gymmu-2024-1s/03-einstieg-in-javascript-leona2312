@@ -517,9 +517,9 @@ export function aufgabe26(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (i === 0) {
-      result.push(input[1])
+      result.push(input[1]) //wenn i 0 ist, dann wird einfach das zweite Zeichen hinzugefügt.
     } else if (i === 1) {
-      result.push(input[0])
+      result.push(input[0]) //wenn i 1 ist, dann wird einfach das erste Zeichen hinzugefügt.
     } else {
       result.push(currentElement)
     }
